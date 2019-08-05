@@ -1,0 +1,12 @@
+li:hover {
+    font-weight: bold;
+    cursor: pointer;
+    display: inline;
+}
+.todoListMain {
+    border: 2px solid peachpuff;
+    display: inline-block;
+    padding: 40px 60px;
+    margin: 20px;
+    background-color: ivory;
+}

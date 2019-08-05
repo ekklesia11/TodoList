@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 
 class TodoListItem extends React.Component {
     constructor(props) {
@@ -27,15 +28,18 @@ class TodoListItem extends React.Component {
 }
 
 const TodoList = (props) => (
-    <ul> 
-        {props.todos.map(todo => 
-        <TodoListItem todoList={todo}/>
-        )}
-    </ul>
+    <div className="todoListMain">
+        <h2>To Do List</h2>
+        <ul> 
+            {props.todos.map(todo => 
+            <TodoListItem todoList={todo}/>
+            )}
+        </ul>
+    </div>
 )
 
 
 ReactDOM.render(
-    <TodoList todos={['getup', 'eat', 'toy-problem', 'study else']} />,
+    <TodoList todos={['wake up ealry morning', 'eat breakfast', 'toy-problem', 'sprint pair programming', 'TIL blogging', 'dors bien']} />,
     document.getElementById('root')
-  );
+);
