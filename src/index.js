@@ -9,11 +9,11 @@ class TodoListItem extends React.Component {
         };
     }
 
-    onListItemClick() {
+    onListItemClick = () => (
         this.setState({
             done: !this.state.done,
-        });
-    }
+        })
+    )
 
     render() {
         const style = {
@@ -21,19 +21,21 @@ class TodoListItem extends React.Component {
         };
 
         return (
-            <li style={style} onClick={this.onListItemClick.bind(this)}>{this.props.todos}</li>
+            <li style={style} onClick={this.onListItemClick.bind(this)}>{this.props.todoList}</li>
         );
     }
 }
 
 const TodoList = (props) => (
     <ul> 
-        <TodoListItem todos={'What should I do?'}/>
+        {props.todos.map(todo => 
+        <TodoListItem todoList={todo}/>
+        )}
     </ul>
 )
 
 
 ReactDOM.render(
-    <TodoList />,
+    <TodoList todos={['getup', 'eat', 'toy-problem', 'study else']} />,
     document.getElementById('root')
   );
