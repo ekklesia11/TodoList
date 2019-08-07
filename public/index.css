@@ -1,7 +1,10 @@
+li {
+    list-style-type: square;
+}
 li:hover {
-    font-weight: bold;
+    font-weight: bolder;
     cursor: pointer;
-    display: inline;
+    display: inline-block;
 }
 .todoListMain {
     border: 2px solid peachpuff;
